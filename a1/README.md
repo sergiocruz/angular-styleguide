@@ -56,6 +56,7 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
   1. [Routing](#routing)
   1. [Task Automation](#task-automation)
   1. [Filters](#filters)
+  1. [Low Level Functions](#low-level-functions)
   1. [Angular Docs](#angular-docs)
 
 ## Single Responsibility
@@ -3267,6 +3268,15 @@ Use [Gulp](http://gulpjs.com) or [Grunt](http://gruntjs.com) for creating automa
     ```
 
 **[Back to top](#table-of-contents)**
+
+## Low Level Functions
+
+  - Avoid using [Angular low-level functions](https://docs.angularjs.org/api/ng/function) such as `angular.copy()`, `angular.extend()` or even `angular.isUndefined()`.
+   
+  *Why?*: You can replace a lot Angular's low-level functions with native ES2015+ functionality such as [`Object.assign()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) for copying objects and the [Spread Syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator#Copy_an_array) for copying arrays _(ie. `[...arr1]`)_.
+
+  - Note: Use a utility library like (lodash)[https://lodash.com/docs/4.15.0] if you need additional functionality that is not available natively in the newest versions of JavaScript.
+
 
 ## Filters
 
